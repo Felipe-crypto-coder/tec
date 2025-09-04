@@ -1,0 +1,144 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #f4f8f9;
+  color: #333;
+}
+
+/* Cabeçalho com imagem de fundo */
+header {
+  background: url("img/header-bg.jpg") center/cover no-repeat;
+  color: white;
+  padding: 60px 20px 40px;
+  text-align: center;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44, 122, 123, 0.6);
+}
+
+header h1, 
+header p, 
+nav, 
+#menu-btn {
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  margin-bottom: 5px;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffd166;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+footer {
+  text-align: center;
+  background: #2c7a7b;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Botão do menu (hambúrguer) */
+#menu-btn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background: rgba(44, 122, 123, 0.95);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  #menu-btn {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 3;
+  }
+}
+
+/* Botao de enviar da pagina contato */
+form button {
+  background: #214c4d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+form button:hover {
+  background: #38b2ac;
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+form button:active {
+  transform: scale(0.97);
+  background: #276749;
+}
